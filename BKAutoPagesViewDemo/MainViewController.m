@@ -26,8 +26,10 @@
     [mainImgNameMarr addObject:@"IMG_04"];
     [mainImgNameMarr addObject:@"IMG_05"];
     
+    /**框架外[核心代码]**/
     BKAutoPagesView *mainView = [[BKAutoPagesView autoPagesView] initWithImageNameArray:mainImgNameMarr];
     [mainView loadAutoPagesViewMainFunction];
+    /**--------------------------------------**/
     [self.view addSubview:mainView];
 }
 
