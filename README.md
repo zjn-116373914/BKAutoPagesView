@@ -3,6 +3,7 @@
 
 例如:
 
+    //框架外[核心代码]
     NSMutableArray *mainImgNameMarr = [[NSMutableArray alloc] init];
     [mainImgNameMarr addObject:@"IMG_01.png"];
     [mainImgNameMarr addObject:@"IMG_02.png"];
@@ -10,7 +11,6 @@
     [mainImgNameMarr addObject:@"IMG_04.png"];
     [mainImgNameMarr addObject:@"IMG_05.png"];
     
-    //框架外[核心代码]
     BKAutoPagesView *mainView = [[BKAutoPagesView autoPagesView] initWithImageNameArray:mainImgNameMarr];
     [mainView loadAutoPagesViewMainFunction];
     //------------------------------------------------------------
