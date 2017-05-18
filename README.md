@@ -1,5 +1,6 @@
 # BKAutoPagesView
 该框架是一个图像3d重叠显示的试图.该框架不仅有酷炫的翻页特性,而且具有自动翻页功能.
+
 例如:
     NSMutableArray *mainImgNameMarr = [[NSMutableArray alloc] init];
     [mainImgNameMarr addObject:@"IMG_01.png"];
