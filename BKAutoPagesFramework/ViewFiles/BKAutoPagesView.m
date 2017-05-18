@@ -13,7 +13,7 @@
 
 @interface BKAutoPagesView()
 
-@property (nonatomic, strong) NSMutableArray *mainImgNameMarr;
+@property (nonatomic, strong) NSMutableArray *mainImagesNameMarr;
 @property (nonatomic, strong) NSTimer *mainTimer;
 @property (nonatomic, strong) UIButton *centerBtn;
 
@@ -26,7 +26,7 @@
     self = [super init];
     if (self)
     {
-        self.mainImgNameMarr = [[NSMutableArray alloc] init];
+        self.mainImagesNameMarr = [[NSMutableArray alloc] init];
         
         CGFloat mainViewWidth = ScreenWidth;
         CGFloat mainViewHeight = ScreenHeight/3.0;
@@ -49,7 +49,7 @@
     self = [super init];
     if (self)
     {
-        self.mainImgNameMarr = [NSMutableArray arrayWithArray:imageNameArray];
+        self.mainImagesNameMarr = [NSMutableArray arrayWithArray:imageNameArray];
     }
     return self;
 }
@@ -57,7 +57,7 @@
 /**[添加单一图像]到主视图中**/
 - (void)addImageNameToMainView:(NSString*)imageName
 {
-    [self.mainImgNameMarr addObject:imageName];
+    [self.mainImagesNameMarr addObject:imageName];
 }
 
 /**[设置主试图坐标]**/
@@ -79,8 +79,8 @@
 - (void)loadAutoPagesViewMainFunction
 {
     //加载[显示图像]
-    CGFloat imgViewWidthSpace = self.width*0.2/(self.mainImgNameMarr.count-1);
-    for(int i=0; i<self.mainImgNameMarr.count; i++)
+    CGFloat imgViewWidthSpace = self.width*0.2/(self.mainImagesNameMarr.count-1);
+    for(int i=0; i<self.mainImagesNameMarr.count; i++)
     {
         UIImageView *mainImgView = [[UIImageView alloc] init];
         mainImgView.width = self.frame.size.width - i*2*imgViewWidthSpace;
@@ -88,7 +88,7 @@
         mainImgView.x = imgViewWidthSpace*i;
         mainImgView.y = 0;
         
-        [mainImgView setImage:[UIImage imageNamed:self.mainImgNameMarr[i]]];
+        [mainImgView setImage:[UIImage imageNamed:self.mainImagesNameMarr[i]]];
         [mainImgView loadShadowOfImageViewToAllBounds];
         [self addSubview:mainImgView];
         
@@ -154,7 +154,7 @@
     
     [UIView animateWithDuration:0.5 animations:^
      {
-         for (NSInteger i=1; i<self.mainImgNameMarr.count; i++)
+         for (NSInteger i=1; i<self.mainImagesNameMarr.count; i++)
          {
              UIImageView *currentImgView = self.subviews[i-1];
              UIImageView *targetImgView = self.subviews[i];
@@ -187,7 +187,7 @@
     
     [UIView animateWithDuration:0.5 animations:^
      {
-         for (NSInteger i=(self.mainImgNameMarr.count-1); i>0; i--)
+         for (NSInteger i=(self.mainImagesNameMarr.count-1); i>0; i--)
          {
              UIImageView *currentImgView = self.subviews[i-1];
              UIImageView *targetImgView = self.subviews[i];
