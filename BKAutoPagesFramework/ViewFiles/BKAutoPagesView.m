@@ -38,7 +38,7 @@
 #pragma mark ---------------------------------------------------------------------------
 
 #pragma mark - [外部开放]方法
-//**[初始化]**//
+/**[初始化]**/
 + (instancetype)autoPagesView
 {
     return  [[self alloc] init];
@@ -54,7 +54,13 @@
     return self;
 }
 
-//**[设置主试图坐标]**//
+/**[添加单一图像]到主视图中**/
+- (void)addImageNameToMainView:(NSString*)imageName
+{
+    [self.mainImgNameMarr addObject:imageName];
+}
+
+/**[设置主试图坐标]**/
 - (void)setPositionWithX:(CGFloat)x Y:(CGFloat)y
 {
     self.x = x;
@@ -62,14 +68,14 @@
 }
 
 
-//**[设置主试图大小]**//
+/**[设置主试图大小]**/
 - (void)setSizeWithWidth:(CGFloat)width Height:(CGFloat)height
 {
     self.width = width;
     self.height = height;
 }
 
-//**最终加载[主方法]**//
+/**最终加载[主方法]**/
 - (void)loadAutoPagesViewMainFunction
 {
     //加载[显示图像]
@@ -141,7 +147,7 @@
 #pragma mark ---------------------------------------------------------------------------
 
 #pragma mark - [按钮控件]方法
-//**[左端]控制按钮执行方法**//
+/**[左端]控制按钮执行方法**/
 - (void)leftBtnAction
 {
     [self mainTimerStopAction];
@@ -174,7 +180,7 @@
     
 }
 
-//**[右端]控制按钮执行方法**//
+/**[右端]控制按钮执行方法**/
 - (void)rightBtnAction
 {
     [self mainTimerStopAction];
@@ -206,7 +212,7 @@
     
 }
 
-//**[中间]控制按钮执行方法**//
+/**[中间]控制按钮执行方法**/
 - (void)centerBtnAction:(UIButton*)sender
 {
     if(sender.selected == NO)
@@ -226,13 +232,13 @@
 #pragma mark ---------------------------------------------------------------------------
 
 #pragma mark - [计时器]方法
-//**[启动计时器]执行方法**//
+/**[启动计时器]执行方法**/
 - (void)mainTimerStartAction
 {
     [self rightBtnAction];
 }
 
-//**[停止计时器]执行方法**//
+/**[停止计时器]执行方法**/
 - (void)mainTimerStopAction
 {
     if(self.mainTimer != nil)
