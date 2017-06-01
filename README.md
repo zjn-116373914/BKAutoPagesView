@@ -3,7 +3,7 @@
 
 例如:
 
-        //框架外[核心代码]
+    //框架外[核心代码]
     NSMutableArray *mainImgNameMarr = [[NSMutableArray alloc] init];
     [mainImgNameMarr addObject:@"IMG_01.png"];
     [mainImgNameMarr addObject:@"IMG_02.png"];
