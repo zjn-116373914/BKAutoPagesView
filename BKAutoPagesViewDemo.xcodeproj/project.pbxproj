@@ -22,6 +22,11 @@
 		0C2ABDA71ECB34020047215A /* icon_stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C2ABD9C1ECB34020047215A /* icon_stop@2x.png */; };
 		0C2ABDA81ECB34020047215A /* icon_stop@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C2ABD9D1ECB34020047215A /* icon_stop@3x.png */; };
 		0C2ABDA91ECB34020047215A /* BKAutoPagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2ABDA01ECB34020047215A /* BKAutoPagesView.m */; };
+		0CD0A2FF1EE0026D00092B9E /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD0A2F61EE0026D00092B9E /* FifthViewController.m */; };
+		0CD0A3001EE0026D00092B9E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD0A2F81EE0026D00092B9E /* FirstViewController.m */; };
+		0CD0A3011EE0026D00092B9E /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD0A2FA1EE0026D00092B9E /* FourthViewController.m */; };
+		0CD0A3021EE0026D00092B9E /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD0A2FC1EE0026D00092B9E /* SecondViewController.m */; };
+		0CD0A3031EE0026D00092B9E /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD0A2FE1EE0026D00092B9E /* ThirdViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +52,16 @@
 		0C2ABD9D1ECB34020047215A /* icon_stop@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_stop@3x.png"; sourceTree = "<group>"; };
 		0C2ABD9F1ECB34020047215A /* BKAutoPagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKAutoPagesView.h; sourceTree = "<group>"; };
 		0C2ABDA01ECB34020047215A /* BKAutoPagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKAutoPagesView.m; sourceTree = "<group>"; };
+		0CD0A2F51EE0026D00092B9E /* FifthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifthViewController.h; sourceTree = "<group>"; };
+		0CD0A2F61EE0026D00092B9E /* FifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthViewController.m; sourceTree = "<group>"; };
+		0CD0A2F71EE0026D00092B9E /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		0CD0A2F81EE0026D00092B9E /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		0CD0A2F91EE0026D00092B9E /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		0CD0A2FA1EE0026D00092B9E /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		0CD0A2FB1EE0026D00092B9E /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		0CD0A2FC1EE0026D00092B9E /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		0CD0A2FD1EE0026D00092B9E /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		0CD0A2FE1EE0026D00092B9E /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +95,7 @@
 		0C2ABD571ECB324B0047215A /* BKAutoPagesViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0CD0A2F41EE0026D00092B9E /* MainControllerFiles */,
 				0C2ABD5B1ECB324B0047215A /* AppDelegate.h */,
 				0C2ABD5C1ECB324B0047215A /* AppDelegate.m */,
 				0C2ABD751ECB32970047215A /* MainViewController.h */,
@@ -142,6 +158,23 @@
 				0C2ABDA01ECB34020047215A /* BKAutoPagesView.m */,
 			);
 			path = ViewFiles;
+			sourceTree = "<group>";
+		};
+		0CD0A2F41EE0026D00092B9E /* MainControllerFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0CD0A2F51EE0026D00092B9E /* FifthViewController.h */,
+				0CD0A2F61EE0026D00092B9E /* FifthViewController.m */,
+				0CD0A2F71EE0026D00092B9E /* FirstViewController.h */,
+				0CD0A2F81EE0026D00092B9E /* FirstViewController.m */,
+				0CD0A2F91EE0026D00092B9E /* FourthViewController.h */,
+				0CD0A2FA1EE0026D00092B9E /* FourthViewController.m */,
+				0CD0A2FB1EE0026D00092B9E /* SecondViewController.h */,
+				0CD0A2FC1EE0026D00092B9E /* SecondViewController.m */,
+				0CD0A2FD1EE0026D00092B9E /* ThirdViewController.h */,
+				0CD0A2FE1EE0026D00092B9E /* ThirdViewController.m */,
+			);
+			path = MainControllerFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,11 +254,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CD0A2FF1EE0026D00092B9E /* FifthViewController.m in Sources */,
+				0CD0A3001EE0026D00092B9E /* FirstViewController.m in Sources */,
+				0CD0A3031EE0026D00092B9E /* ThirdViewController.m in Sources */,
 				0C2ABDA91ECB34020047215A /* BKAutoPagesView.m in Sources */,
 				0C2ABD661ECB324B0047215A /* BKAutoPagesViewDemo.xcdatamodeld in Sources */,
 				0C2ABD5D1ECB324B0047215A /* AppDelegate.m in Sources */,
 				0C2ABDA21ECB34020047215A /* UIView+Layout.m in Sources */,
+				0CD0A3011EE0026D00092B9E /* FourthViewController.m in Sources */,
 				0C2ABD5A1ECB324B0047215A /* main.m in Sources */,
+				0CD0A3021EE0026D00092B9E /* SecondViewController.m in Sources */,
 				0C2ABDA11ECB34020047215A /* UIImageView+Shadow.m in Sources */,
 				0C2ABD771ECB32970047215A /* MainViewController.m in Sources */,
 			);
@@ -378,6 +416,7 @@
 				0C2ABD711ECB324B0047215A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

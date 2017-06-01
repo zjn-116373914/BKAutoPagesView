@@ -1,6 +1,8 @@
 #import <UIKit/UIKit.h>
+typedef void(^blockOfAutoPagesView)(NSInteger);
 
 @interface BKAutoPagesView : UIView
+@property(nonatomic,copy) blockOfAutoPagesView blockToTapImageViewAction;
 
 /**[初始化]**/
 + (instancetype)autoPagesView;
@@ -17,6 +19,10 @@
 /**最终加载[主方法]**/
 - (void)loadAutoPagesViewMainFunction;
 
+/*mainTimer翻页计时器[启动]*/
+- (void)playMainTimerAction;
+/*mainTimer翻页计时器[关闭]*/
+- (void)stopMainTimerAction;
 
 @end
 

@@ -30,7 +30,7 @@
         
         CGFloat mainViewWidth = ScreenWidth;
         CGFloat mainViewHeight = ScreenHeight/3.0;
-        self.frame = CGRectMake(0, HeadHeight, mainViewWidth, mainViewHeight);
+        self.frame = CGRectMake(0, HeadHeight+NavigationItemHeight, mainViewWidth, mainViewHeight);
         
     }
     return self;
@@ -88,12 +88,15 @@
         mainImgView.x = imgViewWidthSpace*i;
         mainImgView.y = 0;
         
-        [mainImgView setImage:[UIImage imageNamed:self.mainImagesNameMarr[i]]];
+        [mainImgView setImage:[UIImage imageNamed:self.mainImagesNameMarr[(self.mainImagesNameMarr.count-1) - i]]];
         [mainImgView loadShadowOfImageViewToAllBounds];
+        
+        mainImgView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(TapGestureAction:)];
+        [mainImgView addGestureRecognizer:tap];
+        mainImgView.tag = ((self.mainImagesNameMarr.count-1) - i) + 100;
+        
         [self addSubview:mainImgView];
-        
-        mainImgView.tag = i + 100;
-        
     }
     //------------------------------------------------------
     
@@ -140,7 +143,7 @@
     [self addSubview:self.centerBtn];
     //------------------------------------------------------
     
-    self.mainTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(mainTimerStartAction) userInfo:nil repeats:YES];
+    [self playMainTimerAction];
 }
 
 
@@ -150,7 +153,7 @@
 /**[左端]控制按钮执行方法**/
 - (void)leftBtnAction
 {
-    [self mainTimerStopAction];
+    [self stopMainTimerAction];
     
     [UIView animateWithDuration:0.5 animations:^
      {
@@ -174,7 +177,7 @@
      {
          if((self.mainTimer == nil)&&(self.centerBtn.selected ==NO))
          {
-             self.mainTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(mainTimerStartAction) userInfo:nil repeats:YES];
+             [self playMainTimerAction];
          }
      }];
     
@@ -183,7 +186,7 @@
 /**[右端]控制按钮执行方法**/
 - (void)rightBtnAction
 {
-    [self mainTimerStopAction];
+    [self stopMainTimerAction];
     
     [UIView animateWithDuration:0.5 animations:^
      {
@@ -206,7 +209,7 @@
      {
          if((self.mainTimer == nil)&&(self.centerBtn.selected ==NO))
          {
-             self.mainTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(mainTimerStartAction) userInfo:nil repeats:YES];
+             [self playMainTimerAction];
          }
      }];
     
@@ -217,29 +220,41 @@
 {
     if(sender.selected == NO)
     {
-        [self mainTimerStopAction];
+        [self stopMainTimerAction];
         
         sender.selected = YES;
     }
     else if (sender.selected == YES)
     {
-        self.mainTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(mainTimerStartAction) userInfo:nil repeats:YES];
-        
+        [self playMainTimerAction];
         sender.selected = NO;
     }
     
 }
-#pragma mark ---------------------------------------------------------------------------
 
-#pragma mark - [计时器]方法
-/**[启动计时器]执行方法**/
-- (void)mainTimerStartAction
+/**图像[点击手势]执行方法**/
+- (void)TapGestureAction:(UIGestureRecognizer*)sender
 {
-    [self rightBtnAction];
+    self.blockToTapImageViewAction(sender.view.tag);
 }
 
-/**[停止计时器]执行方法**/
-- (void)mainTimerStopAction
+#pragma mark ---------------------------------------------------------------------------
+
+
+
+
+#pragma mark - mainTimer计时器操作方法
+/*mainTimer翻页计时器[启动]*/
+- (void)playMainTimerAction
+{
+    if(self.mainTimer == nil)
+    {
+        self.mainTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(autoPageAction) userInfo:nil repeats:YES];
+    }
+}
+
+/*mainTimer翻页计时器[关闭]*/
+- (void)stopMainTimerAction
 {
     if(self.mainTimer != nil)
     {
@@ -248,6 +263,11 @@
     }
 }
 
+/*mainTimer计时器[执行方法]*/
+-(void)autoPageAction
+{
+    [self rightBtnAction];
+}
 
 #pragma mark ---------------------------------------------------------------------------
 
