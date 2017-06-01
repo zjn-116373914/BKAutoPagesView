@@ -14,41 +14,7 @@
     BKAutoPagesView *mainView = [[BKAutoPagesView autoPagesView] initWithImageNameArray:mainImgNameMarr];
     mainView.blockToTapImageViewAction = ^(NSInteger tagOfImageView)
     {
-        switch (tagOfImageView)
-        {
-            case 100:
-            {
-                FirstViewController *firstViewCtl = [[FirstViewController alloc] init];
-                [self.navigationController pushViewController:firstViewCtl animated:YES];
-            }break;
-                
-            case 101:
-            {
-                SecondViewController *secondViewCtl = [[SecondViewController alloc] init];
-                [self.navigationController pushViewController:secondViewCtl animated:YES];
-            }break;
-                
-            case 102:
-            {
-                ThirdViewController *thirdViewCtl = [[ThirdViewController alloc] init];
-                [self.navigationController pushViewController:thirdViewCtl animated:YES];
-            }break;
-                
-            case 103:
-            {
-                FourthViewController *fourthViewCtl = [[FourthViewController alloc] init];
-                [self.navigationController pushViewController:fourthViewCtl animated:YES];
-            }break;
-                
-            case 104:
-            {
-                FifthViewController *fifthViewCtl = [[FifthViewController alloc] init];
-                [self.navigationController pushViewController:fifthViewCtl animated:YES];
-            }break;
-                
-            default:
-                break;
-        }
+        NSLog(@"%ld", tagOfImageView);
     };
     [mainView loadAutoPagesViewMainFunction];
     //------------------------------------------------------------
